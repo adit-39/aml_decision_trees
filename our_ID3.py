@@ -1,5 +1,3 @@
-from preprocessing import *
-
 def entropy(data, target_attr):
     """
     Calculates the entropy of the given data set for the target attribute.
@@ -20,6 +18,3 @@ def entropy(data, target_attr):
         
     return data_entropy
 
-x,y = get_input_data()
-print(x)
-print(y)
