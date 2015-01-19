@@ -19,7 +19,7 @@ def get_input_data():
 	  class is either healthy (buff) or with heart-disease (sick)]
 	'''
 	names=['Age', 'sex', 'chest_pain','blood_pressure','cholesteral','blood_sugar','ecg','heart_rate','eia','oldpeak','slope',
-	  'num_color','thal']
+	  'num_color','thal','class']
 	#print l
 	data=[]
 	#print l
@@ -115,18 +115,19 @@ def get_input_data():
 
 			x.append(temp)	 
 
-	y=[k[-2] for k in x]
-	x=[k[:-2] for k in x]
+
+	#y=[k[-2] for k in x]
+	x=[k[:-1] for k in x]
 	#print x
-	y_vals = list(map(y_mod,y))
+	#y_vals = list(map(y_mod,y))
 
 	x_vals=[]
 	for arr in x:
 		data={}
 		for i in range(len(names)):
-			data[names[i]]=arr[i]
+			#data[names[i]]=arr[i]
+			data[i]=arr[i]
 		x_vals.append(data)
 
-	return x_vals,y_vals
-
+	return x_vals
 	
